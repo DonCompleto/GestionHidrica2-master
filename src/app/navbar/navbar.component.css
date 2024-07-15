@@ -1,0 +1,65 @@
+/* Navbar */
+.navbar {
+  border-bottom: 1px solid #e3e3e3; /* Añade una línea sutil en la parte inferior del navbar */
+}
+
+.navbar-brand {
+  font-weight: bold; /* Destaca el nombre del sitio */
+}
+
+.navbar-toggler {
+  border: none; /* Elimina el borde del botón de toggler */
+}
+
+.card {
+  border-radius: 8px; /* Bordes más suaves */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-dialog {
+  max-width: 500px;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Estilo para botones en el navbar */
+#contenedorBotones .boton {
+  border: none;
+  background: none;
+  margin-left: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#contenedorBotones .boton:hover {
+  background-color: #f8f9fa;
+  color: #0056b3;
+}
+
+/* Asegúrate de que el contenedor del botón de notificaciones esté encima de otros elementos */
+#notificacionesAbrir {
+  position: absolute;
+  top: 60px; /* Ajusta según la altura de tu navbar */
+  right: 10px;
+  width: 300px;
+  z-index: 1050; /* Asegúrate de que esté sobre otros elementos */
+  display: none; /* Ocultar por defecto */
+}
+#notificacionesAbrir.card {
+  display: block; /* Mostrar cuando isOpen sea true */
+}
