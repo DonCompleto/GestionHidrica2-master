@@ -6,8 +6,8 @@
           <h5 class="card-title">{{ card.title }}</h5>
           <canvas *ngIf="card.id !== 'randomValues'" [attr.id]="card.id"></canvas>
           <div *ngIf="card.id === 'randomValues'">
-            <ul>
-              <li *ngFor="let value of randomValues">{{ value.label }}: {{ value.value }}</li>
+            <ul class="ultimosValores">
+              <li *ngFor="let value of randomValues"><span class="label">{{ value.label }}:</span> {{ value.value }} {{value.nuevo}}</li>
             </ul>
           </div>
         </div>

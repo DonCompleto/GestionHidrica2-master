@@ -19,7 +19,7 @@ export class DashboardComponent implements AfterViewInit {
     { id: 'randomValues', title: 'Últimos Valores' }
   ];
 
-  randomValues: { label: string, value: number }[] = [];
+  randomValues: { label: string, value: number, nuevo:string }[] = [];
 
   constructor() {
     Chart.register(...registerables);
@@ -165,18 +165,18 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   generateRandomValues() {
-    const humidity = this.getRandomNumber(25, 83);
-    const volume = this.getRandomNumber(0, 0.7);
-    const temperature = this.getRandomNumber(5.5, 14);
-    const q = this.getRandomNumber(0, 3);
-    const time = this.getRandomNumber(0.2, 1);
+    const humidity = this.getRandomNumber(25, 83).toFixed(2);
+    const volume = this.getRandomNumber(0, 0.7).toFixed(2);
+    const temperature = this.getRandomNumber(5.5, 14).toFixed(2);
+    const q = this.getRandomNumber(0, 3).toFixed(2);
+    const time = this.getRandomNumber(0.2, 1).toFixed(2);
 
     this.randomValues = [
-      { label: 'Humedad', value: humidity },
-      { label: 'Volumen', value: volume },
-      { label: 'Temperatura', value: temperature },
-      { label: 'Q', value: q },
-      { label: 'Tiempo', value: time }
+      { label: 'Humedad', value: parseFloat (humidity), nuevo:'%'},
+      { label: 'Volumen', value: parseFloat (volume), nuevo:'mL' },
+      { label: 'Temperatura', value: parseFloat (temperature), nuevo:'°C' },
+      { label: 'Q', value: parseFloat (q), nuevo:'lt/s' },
+      { label: 'Tiempo', value: parseFloat (time),nuevo:'s' }
     ];
   }
 

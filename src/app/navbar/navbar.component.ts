@@ -11,6 +11,10 @@ import {  ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent { 
+
+  trackById(index: number, item: any) {
+    return item.id;
+  }
   notificationsEnabled = true;
   changeLanguage =[
     {id:1, texto:'Español'},
